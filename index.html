@@ -5,15 +5,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" >
 	<title>ZEPETO Studio</title>
 
-	<link rel="stylesheet" href="style/main.css"> 
+	<link rel="stylesheet" href="css/main.css"> 
 
 	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 	<link rel="icon" href="img/favicon.png" type="image/x-icon">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-		
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
 	<script src="https://kit.fontawesome.com/aa4acd9d65.js" crossorigin="anonymous"></script>
 
 	<script src="js/jquery-3.6.0.min.js"></script>
@@ -22,33 +22,34 @@
 	<div id="wrap">
 		<header>
 			<div id="inner">
-				<div class="logo"></div>
-				<nav>
-					<ul class="gnb">
-						<li><a href="#">콘텐츠<span>&or;</span><span class="up">&and;</span></a>
-							<ul class="lnb">
-								<li><a href="#" class="item">아이템</a></li>
-								<li><a href="#" class="world">월드</a></li>
-								<li><a href="#" class="live">라이브</a></li>
-								<li><a href="#" class="build-it">빌드잇</a></li>
-							</ul>
-						</li>
-						<li><a href="#">크리에이터 프로그램</a></li>
-						<li><a href="#">비즈니스</a></li>
-						<li><a href="#">가이드<span class="down">&or;</span><span class="up">&and;</span></a>
-							<ul class="lnb">
-								<li><a href="#" class="guide">가이드</a></li>
-								<li><a href="#" class="education">학습</a></li>
-							</ul>
-						</li>
-						<li><a href="#">지원</a></li>
+				<div id="header-wrap">
+					<h1 class="logo"><a href="index.html"><img src="img/logo_zepeto_white.png" alt="로고"></a></h1>
+					<nav>
+						<ul class="gnb">
+							<li><a href="#">콘텐츠 <span class="on"><i class="fas light fa-angle-down"></i></span><span><i class="fas light fa-angle-up"></i></span></a>
+								<ul class="lnb">
+									<li><a href="#" class="item">아이템</a></li>
+									<li><a href="#" class="world">월드</a></li>
+									<li><a href="#" class="live">라이브</a></li>
+									<li><a href="#" class="build-it">빌드잇</a></li>
+								</ul>
+							<li><a href="#">크리에이터 프로그램</a></li>
+							<li><a href="#">비즈니스</a></li>
+							<li><a href="#" class="new">가이드 <span class="on"><i class="fas light fa-angle-down"></i></span><span><i class="fas light fa-angle-up"></i></span></a>
+								<ul class="lnb">
+									<li><a href="#" class="guide">가이드</a></li>
+									<li><a href="#" class="education">학습</a></li>
+								</ul>
+							</li>
+							<li><a href="#">지원</a></li>
+						</ul>
+					</nav>
+					<ul class="hd-top">
+						<li class="contents"><a href="#">콘텐츠 관리</a></li>
+						<li><a href="#"><i class="fa-regular fa-bell"></i></a></li>
 					</ul>
-				</nav>
-				<ul class="hd-top">
-					<li><a href="#">콘텐츠 관리</a></li>
-					<li><a href="#"><i class="fa-regular fa-bell"></i></a></li>
-				</ul>
-				<button><i class="fas regular fa-bars"></i></button>
+					<button><i class="fas regular fa-bars"></i></button>
+				</div>
 			</div>
 		</header>
 		<main>

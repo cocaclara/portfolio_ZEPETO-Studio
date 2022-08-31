@@ -1,16 +1,191 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400&family=Noto+Sans+KR&display=swap');
 
 *{
   margin: 0; padding: 0; box-sizing: border-box !important;
 }
 html,body{
+  background: pink;
   width: 100%;
   height: 100%;
-  font-family: 'Cairo', 'Noto Sans KR', sans-serif; /*영문,한글*/
-  font-weight: 300;
-  letter-spacing: 4px;
-  background-color: #e7e6e1;
+  font-family: -apple-system,BlinkMacSystemFont,AppleSDGothicNeo,Helvetica Neue,'Noto Sans KR', helvetica, sans-serif !important; /*영문,한글*/
+  font-size: 17px;
+  letter-spacing: 1px;
 }
 ul,li{list-style: none;}
-a{text-decoration: none; color: #000;}
+a{text-decoration: none;}
+
+/*변수 선언하기*/
+$header-black: #000008;
+$header-gray: #bababa;
+$content-black: #292930;
+$content-gray: #5c5c61;
+$point-color: #5c46ff;
+$copy-color: #99999c;
+
+
+#wrap{width: 100%;overflow: hidden;}
+#inner{max-width: 1440px;margin: auto;}
+
+/*헤더*/
+header{
+  width: 100%;
+  min-width: 320px;
+  height: 80px;
+  line-height: 80px;
+  background-color: #000;
+
+  #header-wrap{
+    width: 100%;height: 80px;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo{
+    flex: 1;
+
+    img{
+      display: block;
+      width: 150px;
+    }
+  }
+  
+  nav{
+    flex: 5;
+
+    ul.gnb{
+      >li{
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 2rem;
+
+        &:hover{
+          .lnb{display: block;}
+        }
+
+        a{display: block;color: $header-gray;}
+        span{display: none;}
+        span.on{
+          display: inline-block;
+        }
+
+        a:hover{
+          color: #fff;
+        }
+        .new{
+          position: relative;
+        }
+        .new::before{
+          content: "";
+          position: absolute;
+          top: 10%;
+          left: 50%;
+          transform: translateX(-50%);
+          background-image: url('../img/icon_new_bubble.svg');
+          background-repeat: no-repeat;
+          background-size: contain;
+
+          width: 28px;
+          height: 20px;
+        
+        }
+      }
+
+      .lnb{
+        display: none;
+        position: absolute;
+        transform: translate(-17px, -15px);
+        background: #fff;
+        border-radius: 16px;
+        width: 240px;
+
+        a{
+          display: block;
+          font-size: 1rem;
+          color: $content-black;
+          height: 70px;
+          line-height: 70px;
+
+          &::before{
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            vertical-align: middle;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            content: "";
+            margin: 0 15px 0 25px;
+          }
+
+          &:hover{
+            color: $point-color;
+          }
+        }
+        .item::before{
+          background-image: url('../img/gnb_product_icon_item.svg');
+        }
+        .world::before{
+          background-image: url('../img/gnb_product_icon_world.svg');
+        }
+        .live::before{
+          background-image: url('../img/gnb_product_icon_live.svg');
+        }
+        .build-it::before{
+          background-image: url('../img/gnb_product_icon_build.svg');
+        }
+        .guide::before{
+          background-image: url('../img/gnb_guide_icon_guide.svg');
+        }
+        .education::before{
+          background-image: url('../img/gnb_guide_icon_learn.svg');
+        }
+        .education{
+          position: relative;
+        }
+        .education::after{
+          content: "";
+          position: absolute; top: 50%; right: 10%;
+          transform: translateY(-50%);
+          width: 28px;height: 20px;
+          background-image: url('../img/product_icon_new.svg');
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+        }
+      }
+    }
+  }
+
+  .hd-top{
+    display: inline-flex;
+    justify-content: end;
+    flex: 1;
+
+    li{
+      display: inline-block;
+    }
+
+    .contents a{
+      color: #fff;
+      font-size: 0.85rem;
+      border: 2px solid #fff;
+      padding: 8px 20px;
+      border-radius: 6px;
+      vertical-align: middle;
+    }
+
+    i{
+      vertical-align: middle;
+      color: #fff;
+      font-size: 25px;
+      margin-left: 20px;
+    }
+  }
+
+  button{
+    display: none;
+    border: none;
+    background: transparent;
+    color: #fff;
+  }
+}

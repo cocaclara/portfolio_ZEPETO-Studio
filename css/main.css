@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400&family=Noto+Sans+KR&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -7,12 +6,12 @@
 }
 
 html, body {
+  background: pink;
   width: 100%;
   height: 100%;
-  font-family: "Cairo", "Noto Sans KR", sans-serif; /*영문,한글*/
-  font-weight: 300;
-  letter-spacing: 4px;
-  background-color: #e7e6e1;
+  font-family: -apple-system, BlinkMacSystemFont, AppleSDGothicNeo, Helvetica Neue, "Noto Sans KR", helvetica, sans-serif !important; /*영문,한글*/
+  font-size: 17px;
+  letter-spacing: 1px;
 }
 
 ul, li {
@@ -21,5 +20,167 @@ ul, li {
 
 a {
   text-decoration: none;
-  color: #000;
+}
+
+/*변수 선언하기*/
+#wrap {
+  width: 100%;
+  overflow: hidden;
+}
+
+#inner {
+  max-width: 1440px;
+  margin: auto;
+}
+
+/*헤더*/
+header {
+  width: 100%;
+  min-width: 320px;
+  height: 80px;
+  line-height: 80px;
+  background-color: #000;
+}
+header #header-wrap {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+header .logo {
+  flex: 1;
+}
+header .logo img {
+  display: block;
+  width: 150px;
+}
+header nav {
+  flex: 5;
+}
+header nav ul.gnb > li {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 2rem;
+}
+header nav ul.gnb > li:hover .lnb {
+  display: block;
+}
+header nav ul.gnb > li a {
+  display: block;
+  color: #bababa;
+}
+header nav ul.gnb > li span {
+  display: none;
+}
+header nav ul.gnb > li span.on {
+  display: inline-block;
+}
+header nav ul.gnb > li a:hover {
+  color: #fff;
+}
+header nav ul.gnb > li .new {
+  position: relative;
+}
+header nav ul.gnb > li .new::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url("../img/icon_new_bubble.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 28px;
+  height: 20px;
+}
+header nav ul.gnb .lnb {
+  display: none;
+  position: absolute;
+  transform: translate(-17px, -15px);
+  background: #fff;
+  border-radius: 16px;
+  width: 240px;
+}
+header nav ul.gnb .lnb a {
+  display: block;
+  font-size: 1rem;
+  color: #292930;
+  height: 70px;
+  line-height: 70px;
+}
+header nav ul.gnb .lnb a::before {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  content: "";
+  margin: 0 15px 0 25px;
+}
+header nav ul.gnb .lnb a:hover {
+  color: #5c46ff;
+}
+header nav ul.gnb .lnb .item::before {
+  background-image: url("../img/gnb_product_icon_item.svg");
+}
+header nav ul.gnb .lnb .world::before {
+  background-image: url("../img/gnb_product_icon_world.svg");
+}
+header nav ul.gnb .lnb .live::before {
+  background-image: url("../img/gnb_product_icon_live.svg");
+}
+header nav ul.gnb .lnb .build-it::before {
+  background-image: url("../img/gnb_product_icon_build.svg");
+}
+header nav ul.gnb .lnb .guide::before {
+  background-image: url("../img/gnb_guide_icon_guide.svg");
+}
+header nav ul.gnb .lnb .education::before {
+  background-image: url("../img/gnb_guide_icon_learn.svg");
+}
+header nav ul.gnb .lnb .education {
+  position: relative;
+}
+header nav ul.gnb .lnb .education::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 20px;
+  background-image: url("../img/product_icon_new.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+header .hd-top {
+  display: inline-flex;
+  justify-content: end;
+  flex: 1;
+}
+header .hd-top li {
+  display: inline-block;
+}
+header .hd-top .contents a {
+  color: #fff;
+  font-size: 0.85rem;
+  border: 2px solid #fff;
+  padding: 8px 20px;
+  border-radius: 6px;
+  vertical-align: middle;
+}
+header .hd-top i {
+  vertical-align: middle;
+  color: #fff;
+  font-size: 25px;
+  margin-left: 20px;
+}
+header button {
+  display: none;
+  border: none;
+  background: transparent;
+  color: #fff;
 }/*# sourceMappingURL=main.css.map */
