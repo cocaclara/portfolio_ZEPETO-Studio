@@ -4,7 +4,6 @@
   margin: 0; padding: 0; box-sizing: border-box !important;
 }
 html,body{
-  background: pink;
   width: 100%;
   height: 100%;
   font-family: -apple-system,BlinkMacSystemFont,AppleSDGothicNeo,Helvetica Neue,'Noto Sans KR', helvetica, sans-serif !important; /*영문,한글*/
@@ -24,7 +23,12 @@ $copy-color: #99999c;
 
 
 #wrap{width: 100%;overflow: hidden;}
-#inner{max-width: 1440px;margin: auto;}
+.inner{
+  max-width: 1440px;
+  margin: auto;
+  box-sizing: border-box;
+  background: #dafde3;
+}
 
 /*헤더*/
 header{
@@ -40,7 +44,7 @@ header{
     align-items: center;
   }
 
-  .logo{
+  h1.logo{
     flex: 1;
 
     img{
@@ -92,7 +96,7 @@ header{
 
       .lnb{
         display: none;
-        position: absolute;
+        position: absolute; z-index: 100;
         transform: translate(-17px, -15px);
         background: #fff;
         border-radius: 16px;
@@ -156,7 +160,7 @@ header{
     }
   }
 
-  .hd-top{
+  ul.hd-top{
     display: inline-flex;
     justify-content: end;
     flex: 1;
@@ -182,10 +186,74 @@ header{
     }
   }
 
-  button{
+  a.list{
     display: none;
     border: none;
     background: transparent;
     color: #fff;
+  }
+}
+
+/*메인*/
+main{
+  width: 100%;
+  background: pink;
+  
+  // 섹션1 제외한 나머지는 같은 패딩값 줌
+  section:not(.main-home){
+    padding: 120px 0;
+  }  
+  /*시작하기 버튼*/
+  a.btn-start{
+    margin-top: 40px;
+    display: inline-block;
+    height: 68px;
+    line-height: 68px;
+    padding: 0 34px;
+    background: rgba(255,255,255,1);
+    border-radius: 34px;
+    font-weight: 700;
+    font-size: 22px;
+    color: $point-color;
+    box-shadow: rgba(0,0,0,0.2) 0 0 20px;
+  }
+
+  /*섹션1*/
+  .main-home{
+    overflow: hidden;
+    position: relative;
+
+    video{
+      width: 100%;
+      height: calc(100vh - 80px);
+      // 대체 콘텐츠 가로세로비 유지 & 가득 채움
+      object-fit: cover;
+    }
+    #text-area{
+      width: 100%;
+      position: absolute;top: 50%;left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .inner-text{
+      // width: 100%;
+      text-align: center;
+  
+      h2{
+        font-size: 4rem;
+        font-weight: 500;
+        line-height: 1.2;
+        color: #fff;
+        text-shadow: rgba(0,0,0,0.2) 0 0 8px;
+      }
+    }
+  }
+  
+  /*섹션2*/
+  .creators{
+    div,img,ul{width: 100%;text-align: center;}
+  }
+.content-text
+  .title{
+    font-size: 3.5rem;
   }
 }

@@ -21,7 +21,7 @@
 <body>
 	<div id="wrap">
 		<header>
-			<div id="inner">
+			<div class="inner">
 				<div id="header-wrap">
 					<h1 class="logo"><a href="index.html"><img src="img/logo_zepeto_white.png" alt="로고"></a></h1>
 					<nav>
@@ -48,13 +48,51 @@
 						<li class="contents"><a href="#">콘텐츠 관리</a></li>
 						<li><a href="#"><i class="fa-regular fa-bell"></i></a></li>
 					</ul>
-					<button><i class="fas regular fa-bars"></i></button>
+					<a class="list"><i class="fas regular fa-bars"></i></a>
 				</div>
 			</div>
 		</header>
 		<main>
-			<section class="main-home"></section>
-			<section class="creators"></section>
+			<section class="main-home">
+				<div class="bg-video">
+					<video src="img/bg_home_video.mp4" muted playsinline loop>
+						<!-- 구버전용 -->
+						<source src="img/bg_home_video.mp4" type="video/mp4">
+					</video>
+				</div>
+				<div id="text-area">
+					<div class="inner">
+						<div class="inner-text fade-up">
+							<h2>상상하는 모든 것.<br>제페토 스튜디오에서.</h2>
+							<a class="btn-start fade-up">시작하기</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="creators">
+				<div class="inner">
+					<div class="content-text">
+						<h2 class="title fade-up">크리에이터를 위한 제페토.</h2>
+						<h3 class="text fade-up">제페토 크리에이터는 제페토 세상의 모든 것을 직접 만들 수 있습니다.<br>
+							전 세계 3억 유저에게 당신의 아이디어를 보여주세요!</h3>
+					</div>
+					<img class="fade-up" src="img/img_creators.png" alt="이미지">
+					<ul class="">
+						<li>
+							<h4>6800만</h4>
+							<h5>스튜디오 아이템 판매량</h5>
+						</li>
+						<li>
+							<h4>230만</h4>
+							<h5>스튜디오 크리에이터 수</h5>
+						</li>
+						<li>
+							<h4>3억</h4>
+							<h5>제페토 가입자 수</h5>
+						</li>
+					</ul>
+				</div>
+			</section>
 			<section class="reality"></section>
 			<section class="creator"></section>
 			<section class="profit"></section>
