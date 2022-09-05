@@ -21,6 +21,10 @@ a {
   text-decoration: none;
 }
 
+h3 {
+  font: 1.3rem sans-serif;
+}
+
 /*변수 선언하기*/
 #wrap {
   width: 100%;
@@ -32,6 +36,18 @@ a {
   margin: auto;
   box-sizing: border-box;
   background: #dafde3;
+}
+
+h2.title {
+  font-size: 3.5rem;
+}
+
+span {
+  display: block;
+  margin-top: 8px;
+  font: 1.05rem sans-serif;
+  line-height: 1.3rem;
+  color: #5c5c61;
 }
 
 /*헤더*/
@@ -192,6 +208,7 @@ main {
   width: 100%;
   background: pink;
   /*시작하기 버튼*/
+  /* 컨텐츠 목록 나열 사이즈*/
   /*섹션1*/
   /*섹션2*/
 }
@@ -210,6 +227,15 @@ main a.btn-start {
   font-size: 22px;
   color: #5c46ff;
   box-shadow: rgba(0, 0, 0, 0.2) 0 0 20px;
+}
+main .content-list li {
+  display: inline-block;
+  width: calc(33.333% - 20px);
+  max-width: 286px;
+}
+main .content-list li h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
 }
 main .main-home {
   overflow: hidden;
@@ -238,10 +264,16 @@ main .main-home .inner-text h2 {
   color: #fff;
   text-shadow: rgba(0, 0, 0, 0.2) 0 0 8px;
 }
+main .creators {
+  background: skyblue;
+}
 main .creators div, main .creators img, main .creators ul {
   width: 100%;
   text-align: center;
 }
-main .content-text .title {
-  font-size: 3.5rem;
+main .creators h3.text {
+  margin-top: 20px;
+}
+main .creators img {
+  margin: 80px 0 60px;
 }/*# sourceMappingURL=main.css.map */
