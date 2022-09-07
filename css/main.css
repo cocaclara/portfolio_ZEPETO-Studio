@@ -38,16 +38,16 @@ h3 {
   background: #dafde3;
 }
 
-h2.title {
-  font-size: 3.5rem;
+.content-text {
+  margin-bottom: 80px;
 }
-
-span {
-  display: block;
-  margin-top: 8px;
-  font: 1.05rem sans-serif;
-  line-height: 1.3rem;
-  color: #5c5c61;
+.content-text h2.title {
+  font-size: 3.5rem;
+  line-height: 4.5rem;
+}
+.content-text h3.text {
+  margin-top: 20px;
+  letter-spacing: -0.2px;
 }
 
 /*헤더*/
@@ -209,11 +209,17 @@ main {
   background: pink;
   /*시작하기 버튼*/
   /* 컨텐츠 목록 나열 사이즈*/
-  /*섹션1*/
-  /*섹션2*/
+  /*섹션1 - main-home*/
+  /*섹션2 - creators*/
+  /*섹션3 - reality*/
+  /*섹션4 - creator*/
 }
 main section:not(.main-home) {
   padding: 120px 0;
+}
+main section:not(.main-home) div, main section:not(.main-home) img, main section:not(.main-home) ul {
+  width: 100%;
+  text-align: center;
 }
 main a.btn-start {
   margin-top: 40px;
@@ -224,56 +230,115 @@ main a.btn-start {
   background: rgb(255, 255, 255);
   border-radius: 34px;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 1.29rem;
   color: #5c46ff;
   box-shadow: rgba(0, 0, 0, 0.2) 0 0 20px;
+  cursor: pointer;
 }
 main .content-list li {
   display: inline-block;
   width: calc(33.333% - 20px);
   max-width: 286px;
 }
-main .content-list li h3 {
+main .content-list li h4 {
   font-size: 1.6rem;
   font-weight: 700;
 }
-main .main-home {
+main .content-list li span {
+  display: block;
+  margin-top: 8px;
+  font: 1.05rem sans-serif;
+  line-height: 1.3rem;
+  color: #5c5c61;
+}
+main .content-list li a.plus {
+  margin-top: 40px;
+  display: inline-block;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 34px;
+  background: #5c46ff;
+  border-radius: 34px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 20px;
+  cursor: pointer;
+}
+main section.main-home {
   overflow: hidden;
   position: relative;
 }
-main .main-home video {
+main section.main-home video {
   width: 100%;
   height: calc(100vh - 80px);
   -o-object-fit: cover;
      object-fit: cover;
 }
-main .main-home #text-area {
+main section.main-home #text-area {
   width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-main .main-home .inner-text {
+main section.main-home .inner-text {
   text-align: center;
 }
-main .main-home .inner-text h2 {
+main section.main-home .inner-text h2 {
   font-size: 4rem;
   font-weight: 500;
   line-height: 1.2;
   color: #fff;
   text-shadow: rgba(0, 0, 0, 0.2) 0 0 8px;
 }
-main .creators {
+main section.creators {
   background: skyblue;
 }
-main .creators div, main .creators img, main .creators ul {
+main section.creators img {
+  margin-bottom: 60px;
+}
+main section.reality {
+  background-color: #f8f8fa;
+}
+main section.reality .reality-list > li:not(first-child) {
+  margin-left: 36px;
+}
+main section.reality .reality-list > li {
+  position: relative;
+  display: inline-block;
+  padding: 42px 32px 32px;
+  background: #fff;
+  border-radius: 16px;
+  height: 24.47rem;
+  max-width: 320px;
+  width: calc(33.333% - 36px);
+  vertical-align: middle;
+}
+main section.reality .content-list > li {
+  display: block;
   width: 100%;
-  text-align: center;
+  max-width: 286px;
 }
-main .creators h3.text {
-  margin-top: 20px;
+main section.reality .content-list > li img {
+  width: 5.17rem;
 }
-main .creators img {
-  margin: 80px 0 60px;
+main section.reality .content-list > li h4 {
+  margin-top: 32px;
+}
+main section.reality .content-list > li span {
+  margin-top: 15px;
+  font-size: 1rem;
+  line-height: 0.7rem;
+  white-space: pre-wrap;
+  word-spacing: 2px;
+}
+main section.reality .content-list > li a {
+  position: absolute;
+  bottom: 32px;
+  left: 60px;
+  right: 60px;
+}
+main section.creator {
+  background-color: yellow;
 }/*# sourceMappingURL=main.css.map */

@@ -31,15 +31,18 @@ $copy-color: #99999c;
   box-sizing: border-box;
   background: #dafde3;
 }
-h2.title{
-  font-size: 3.5rem;
-}
-span{
-  display: block;
-  margin-top: 8px;
-  font: 1.05rem sans-serif;
-  line-height: 1.3rem;
-  color: $content-gray;
+.content-text{
+  margin-bottom: 80px;
+  
+  h2.title{
+    font-size: 3.5rem;
+    line-height: 4.5rem;
+    
+  }
+  h3.text{
+    margin-top: 20px;
+    letter-spacing: -0.2px;
+  }
 }
 
 /*헤더*/
@@ -214,6 +217,7 @@ main{
   // 섹션1 제외한 나머지는 같은 패딩값 줌
   section:not(.main-home){
     padding: 120px 0;
+    div,img,ul{width: 100%;text-align: center;}
   }  
   /*시작하기 버튼*/
   a.btn-start{
@@ -225,9 +229,10 @@ main{
     background: rgba(255,255,255,1);
     border-radius: 34px;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 1.29rem;
     color: $point-color;
     box-shadow: rgba(0,0,0,0.2) 0 0 20px;
+    cursor: pointer;
   }
 
   /* 컨텐츠 목록 나열 사이즈*/
@@ -236,17 +241,41 @@ main{
     width: calc(33.333% - 20px);
     max-width: 286px;
 
-    h3{
-      font:{
+    h4{
+      font : {
         size: 1.6rem;
         weight: 700;
       }
-    }   
+    }
+    
+    span{
+      display: block;
+      margin-top: 8px;
+      font: 1.05rem sans-serif;
+      line-height: 1.3rem;
+      color: $content-gray;
+      // white-space: pre-wrap;
+    }
+
+    a.plus{
+      margin-top: 40px;
+      display: inline-block;
+      height: 48px;
+      line-height: 48px;
+      padding: 0 34px;
+      background: $point-color;
+      border-radius: 34px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+      box-shadow: rgba(0,0,0,0.2) 0 0 20px;
+      cursor: pointer;
+    }
   }
 
 
-  /*섹션1*/
-  .main-home{
+  /*섹션1 - main-home*/
+  section.main-home{
     overflow: hidden;
     position: relative;
 
@@ -274,18 +303,66 @@ main{
       }
     }
   }
+
   
-  
-  /*섹션2*/
-  .creators{
-    background: skyblue;;
+  /*섹션2 - creators*/
+  section.creators{
+    background: skyblue;
 
-    div,img,ul{width: 100%;text-align: center;}
-
-    h3.text{margin-top: 20px;}
-
-    img{margin: 80px 0 60px;}
-
-    
+    img{margin-bottom: 60px;}
   }
+
+
+  /*섹션3 - reality*/
+  section.reality{
+    background-color: #f8f8fa;
+
+    .reality-list>li:not(first-child){
+      margin-left: 36px;
+    }
+    .reality-list>li{
+      position: relative;
+      display: inline-block;
+      padding: 42px 32px 32px;
+      background: #fff;
+      border-radius: 16px;
+      height: 24.47rem;
+      max-width: 320px;
+      width: calc(33.333% - 36px);
+      vertical-align: middle;
+    }
+
+    .content-list>li{
+      display: block;
+      width: 100%;
+      max-width: 286px;
+
+      img{
+        width: 5.17rem;
+      }
+      h4{margin-top: 32px;}
+
+      span{
+        margin-top: 15px;
+        font-size: 1rem;
+        line-height: 0.7rem;
+        white-space: pre-wrap;
+        word-spacing: 2px;
+      }
+
+      a{
+        position: absolute;
+        bottom: 32px;
+        left: 60px;right: 60px;
+      }
+    }
+  }
+
+
+  /*섹션4 - creator*/
+  section.creator{
+    background-color: yellow;
+  }
+
+
 }

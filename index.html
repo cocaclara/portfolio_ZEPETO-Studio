@@ -5,7 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" >
 	<title>ZEPETO Studio</title>
 
-	<link rel="stylesheet" href="css/main.css"> 
+	<!-- 메인 CSS -->
+	<link rel="stylesheet" href="css/main.css">
 
 	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 	<link rel="icon" href="img/favicon.png" type="image/x-icon">
@@ -16,6 +17,10 @@
 
 	<script src="https://kit.fontawesome.com/aa4acd9d65.js" crossorigin="anonymous"></script>
 
+	<!-- 반응형 슬라이더 Swiper CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+	<link rel="stylesheet" href="css/swiper.css">
+	
 	<script src="js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
@@ -79,27 +84,151 @@
 					<img class="fade-up" src="img/img_creators.png" alt="이미지">
 					<ul class="content-list">
 						<li>
-							<h3>6800만</h3>
+							<h4>6800만</h4>
 							<span>스튜디오 아이템 판매량</span>
 						</li>
 						<li>
-							<h3>230만</h3>
+							<h4>230만</h4>
 							<span>스튜디오 크리에이터 수</span>
 						</li>
 						<li>
-							<h3>3억</h3>
+							<h4>3억</h4>
 							<span>제페토 가입자 수</h5>
 						</li>
 					</ul>
 				</div>
 			</section>
-			<section class="reality"></section>
-			<section class="creator"></section>
+			<section class="reality">
+				<div class="inner">
+					<div class="content-text">
+						<h2 class="title fade-up">제페토 세상이 내 손안에.</h2>
+						<h3 class="text fade-up">아이템, 월드, 라이브까지!<br>
+						제페토는 크리에이터가 아이디어를 펼칠 수 있는 최고의 플랫폼입니다.</h3>
+					</div>
+					<ul class="reality-list">
+						<li>
+							<ul class="content-list">
+								<li><img src="img/gnb_product_icon_item.svg" alt="아이템 이미지"></li>
+								<li>
+									<h4>아이템</h4>
+									<span>패션 아이템을 만들고
+										수익을 창출하세요.</span>
+								</li>
+								<li><a class="plus" href="#">더 알아보기</a></li>
+							</ul>
+						</li>
+						<li>
+							<ul class="content-list">
+								<li><img src="img/gnb_product_icon_world.svg" alt="월드 이미지"></li>
+								<li>
+									<h4>월드</h4>
+									<span>제페토 세상에
+										내 아이디어가 담긴
+										월드를 만드세요.</span>
+								</li>
+								<li><a class="plus" href="#">더 알아보기</a></li>
+							</ul>
+						</li>
+						<li>
+							<ul class="content-list">
+								<li><img src="img/gnb_product_icon_live.svg" alt="라이브 이미지"></li>
+								<li>
+									<h4>라이브</h4>
+									<span>전 세계 유저들과
+										실시간 방송하세요.</span>
+								</li>
+								<li><a class="plus" href="#">더 알아보기</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="creator">
+				<div class="inner">
+					<div class="content-text">
+						<h2 class="title fade-up">3억 명을 사로잡을<br>크리에이어가 될 기회.</h2>
+						<h3 class="text fade-up">230만이 넘는 제페토 크리에이터가 전 세계 3억 유저에게 아이디어를 선보이고 있습니다.<br>
+							제페토의 대표 크리에이터를 바로 만나보세요.</h3>
+					</div>
+
+					<!-- Swiper -->
+					<div class="swiper mySwiper">
+						<!-- Additional required wrapper -->
+						<div class="swiper-wrapper">
+							<!-- Slides 1 -->
+							<div class="swiper-slide">
+								<div class="slide-content">
+									<div class="img-box">
+										<img src="img/character/img_slider_01.png" alt="캐릭터이미지1">
+									</div>
+									<div class="profile-box">
+										<div class="name">Lenge</div>
+										<div class="tag">@lenge</div>
+									</div>
+								</div>
+							</div>
+							<!-- Slides 2 -->
+							<div class="swiper-slide">
+								<div class="slide-content">
+									<div class="img-box">
+										<img src="img/character/img_slider_02.png" alt="캐릭터이미지2">
+									</div>
+									<div class="profile-box">
+										<div class="name">아티 Arty</div>
+										<div class="tag">@arty_</div>
+									</div>
+								</div>
+							</div>
+							<!-- Slides 3 -->
+							<div class="swiper-slide">
+								<div class="slide-content">
+									<div class="img-box">
+										<img src="img/character/img_slider_03.png" alt="캐릭터이미지3">
+									</div>
+									<div class="profile-box">
+										<div class="name">하리</div>
+										<div class="tag">@hari</div>
+									</div>
+								</div>
+							</div>
+							<!-- Slides 4 -->
+							<div class="swiper-slide">
+								<div class="slide-content">
+									<div class="img-box">
+										<img src="img/character/img_slider_04.png" alt="캐릭터이미지4">
+									</div>
+									<div class="profile-box">
+										<div class="name">CLOUD</div>
+										<div class="tag">@cloud</div>
+									</div>
+								</div>
+							</div>
+							<!-- Slides 5 -->
+							<div class="swiper-slide">
+								<div class="slide-content">
+									<div class="img-box">
+										<img src="img/character/img_slider_05.png" alt="캐릭터이미지5">
+									</div>
+									<div class="profile-box">
+										<div class="name">코코</div>
+										<div class="tag">@coco</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 			<section class="profit"></section>
 			<section class="get-start"></section>
 		</main>
 		<footer></footer>
 	</div>
+	
 	<script src="js/main.js"></script>
+	<!-- 반응형 슬라이더 Swiper JS -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+	<script src="js/swiper.js"/>
+
 </body>
 </html>
