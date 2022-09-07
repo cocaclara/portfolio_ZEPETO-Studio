@@ -361,7 +361,14 @@ main{
 
   /*섹션4 - creator*/
   section.creator{
-    background-color: yellow;
+    background-color: #fff;
+
+    div.swiper.mySwiper{
+      max-width: 1800px;
+      margin: auto;
+      box-sizing: border-box;
+      // background: #dafde3;
+    }
   }
 
 

@@ -20,7 +20,7 @@ body {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
+  /* background: #fff; */
 
   /* Center slide text vertically */
   display: -webkit-box;
@@ -47,4 +47,39 @@ body {
 .swiper {
   margin-left: auto;
   margin-right: auto;
+}
+
+/* 
+.creator .swiper-slide{
+  width: 320px !important;
+} */
+
+/* .creator .swiper-slide.swiper-slide-prev{
+  margin-right: 20px !important;
+}
+.creator .swiper-slide.swiper-slide-active{
+  width: 368px !important;
+  margin-right: 20px !important;
+} */
+
+/* .creator .swiper-slide.swiper-slide-active .img-box {
+  width: 324px;
+  height: 324px;
+} */
+
+/* .swiper-wrapper{
+  align-items: center;
+} */
+
+.creator .swiper-slide .img-box{
+  border-radius: 50%;
+  box-shadow: 0 40px 30px 0 rgb(0 0 0 / 10%);
+  margin-bottom: 28px;
+  overflow: hidden;
+}
+.profile-box{
+  display: none;
+}
+.creator .swiper-slide-active .profile-box{
+  display: block;
 }

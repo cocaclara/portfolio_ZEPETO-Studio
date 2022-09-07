@@ -340,5 +340,10 @@ main section.reality .content-list > li a {
   right: 60px;
 }
 main section.creator {
-  background-color: yellow;
+  background-color: #fff;
+}
+main section.creator div.swiper.mySwiper {
+  max-width: 1800px;
+  margin: auto;
+  box-sizing: border-box;
 }/*# sourceMappingURL=main.css.map */
