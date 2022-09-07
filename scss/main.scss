@@ -307,8 +307,6 @@ main{
   
   /*섹션2 - creators*/
   section.creators{
-    background: skyblue;
-
     img{margin-bottom: 60px;}
   }
 
@@ -361,13 +359,38 @@ main{
 
   /*섹션4 - creator*/
   section.creator{
-    background-color: #fff;
+    .content-text{
+      margin-bottom: 140px;
+    }
 
     div.swiper.mySwiper{
       max-width: 1800px;
       margin: auto;
       box-sizing: border-box;
-      // background: #dafde3;
+    }
+    .profile-box{
+      .name{font-weight: 700;font-size: 1.5rem;}
+      .tag{font-size: 1.1rem;color: $content-gray;}
+    }
+  }
+  
+
+  /*섹션6 - get-start*/
+  section.get-start{
+    .content-text{
+      margin-bottom: 40px;
+    }
+    a.start{
+      display: inline-block;
+      height: 56px;
+      line-height: 56px;
+      padding: 0 34px;
+      background: $point-color;
+      border-radius: 34px;
+      font-size: 1.18rem;
+      color: #fff;
+      box-shadow: rgba(0,0,0,0.2) 0 0 20px;
+      cursor: pointer;
     }
   }
 

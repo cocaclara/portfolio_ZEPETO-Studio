@@ -213,6 +213,7 @@ main {
   /*섹션2 - creators*/
   /*섹션3 - reality*/
   /*섹션4 - creator*/
+  /*섹션6 - get-start*/
 }
 main section:not(.main-home) {
   padding: 120px 0;
@@ -292,9 +293,6 @@ main section.main-home .inner-text h2 {
   color: #fff;
   text-shadow: rgba(0, 0, 0, 0.2) 0 0 8px;
 }
-main section.creators {
-  background: skyblue;
-}
 main section.creators img {
   margin-bottom: 60px;
 }
@@ -339,11 +337,34 @@ main section.reality .content-list > li a {
   left: 60px;
   right: 60px;
 }
-main section.creator {
-  background-color: #fff;
+main section.creator .content-text {
+  margin-bottom: 140px;
 }
 main section.creator div.swiper.mySwiper {
   max-width: 1800px;
   margin: auto;
   box-sizing: border-box;
+}
+main section.creator .profile-box .name {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+main section.creator .profile-box .tag {
+  font-size: 1.1rem;
+  color: #5c5c61;
+}
+main section.get-start .content-text {
+  margin-bottom: 40px;
+}
+main section.get-start a.start {
+  display: inline-block;
+  height: 56px;
+  line-height: 56px;
+  padding: 0 34px;
+  background: #5c46ff;
+  border-radius: 34px;
+  font-size: 1.18rem;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 20px;
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

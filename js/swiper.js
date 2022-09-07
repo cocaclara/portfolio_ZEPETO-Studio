@@ -2,7 +2,7 @@
 
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 5,
-  spaceBetween: 20,
+  spaceBetween: 10,
   loop: true,               // 슬라이드 반복
   centeredSlides: true,     // 슬라이트 가운데 배치
   autoplay: {
@@ -31,8 +31,4 @@ var swiper = new Swiper(".mySwiper", {
       spaceBetween: 40,
     },
   },
-});
-
-$(document).ready(function(){
-    // $('.swiper-slide-active').find('.profile-box').show();
 });

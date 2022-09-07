@@ -1,17 +1,3 @@
-html,body {
-  /* position: relative; */
-  /* height: 100%; */
-}
-
-body {
-  /* background: #eee; */
-  /* font-family: Helvetica Neue, Helvetica, Arial, sans-serif; */
-  /* font-size: 14px; */
-  /* color: #000; */
-  /* margin: 0; */
-  /* padding: 0; */
-}
-
 .swiper {
   width: 100%;
   height: 100%;
@@ -47,42 +33,28 @@ body {
 .swiper {
   margin-left: auto;
   margin-right: auto;
+  height: max-content;
+  overflow: visible;
 }
 
-/* 
-.creator .swiper-slide{
-  width: 320px !important;
-} */
-
-/* .creator .swiper-slide.swiper-slide-prev{
-  margin-right: 20px !important;
-} */
-.creator .slide-content{
-  height: 100%;
+.slide-content{
+  overflow: visible;
 }
-.creator .swiper-slide.swiper-slide-active{
-  height: auto !important;
-}
-.creator .swiper-slide:not(.swiper-slide-active) .img-box{
-  transform: scale(0.9);
-  /* height: 100%; */
-}
-
-/* .creator .swiper-slide.swiper-slide-active .img-box {
-  width: 324px;
-  height: 324px;
-} */
-
-.swiper-wrapper{
-  height: 100%;
-}
-
 .creator .swiper-slide .img-box{
   border-radius: 50%;
   box-shadow: 0 40px 30px 0 rgb(0 0 0 / 10%);
   margin-bottom: 28px;
   overflow: hidden;
 }
+.creator .swiper-slide:not(.swiper-slide-active) .img-box{
+  transform: scale(0.9);
+}
+.creator .swiper-slide.swiper-slide-active .img-box{
+  /* position: absolute;z-index: 5; */
+  transform: scale(1.15);
+}
+
+/* active일 때 글씨 보이기 */
 .profile-box{
   display: none;
 }
