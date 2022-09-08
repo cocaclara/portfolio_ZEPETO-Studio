@@ -20,6 +20,7 @@ $header-black: #000008;
 $header-gray: #bababa;
 $content-black: #292930;
 $content-gray: #5c5c61;
+$content-back: #f8f8fa;
 $point-color: #5c46ff;
 $copy-color: #99999c;
 
@@ -47,6 +48,7 @@ $copy-color: #99999c;
 
 /*헤더*/
 header{
+  position: fixed;z-index: 100;
   width: 100%;
   min-width: 320px;
   height: 80px;
@@ -209,10 +211,10 @@ header{
   }
 }
 
+
 /*메인*/
 main{
   width: 100%;
-  background: pink;
   
   // 섹션1 제외한 나머지는 같은 패딩값 줌
   section:not(.main-home){
@@ -313,7 +315,7 @@ main{
 
   /*섹션3 - reality*/
   section.reality{
-    background-color: #f8f8fa;
+    background-color: $content-back;
 
     .reality-list>li:not(first-child){
       margin-left: 36px;
@@ -373,6 +375,11 @@ main{
       .tag{font-size: 1.1rem;color: $content-gray;}
     }
   }
+
+  /*섹션5 - profit*/
+  section.profit{
+    background-color: $content-back;
+  }
   
 
   /*섹션6 - get-start*/
@@ -389,10 +396,58 @@ main{
       border-radius: 34px;
       font-size: 1.18rem;
       color: #fff;
-      box-shadow: rgba(0,0,0,0.2) 0 0 20px;
+      // box-shadow: rgba(0,0,0,0.2) 0 0 20px;
       cursor: pointer;
     }
+
+    /*STEP*/
+    .step-box{
+      margin-top: 80px;
+      padding: 56px 75px;
+      background: $content-back;
+      border-radius: 16px;
+      box-sizing: border-box;
+
+      .step-list{
+        display: flex;
+      }
+
+      .step-item{
+        flex: 3;
+        .number{
+          font-size: 22px;
+          font-weight: 700;
+          background: #f0f0f0;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          line-height: 38px;
+          text-align: center;
+          margin: 0 auto;
+        }
+        dl{
+          margin-top: 22px;
+        }
+        dt{
+          font-size: 1.29rem;
+          font-weight: 700;
+        }
+        dd{
+          margin-top: 12px;;
+          color: $content-gray;
+        }
+      }
+      .right{
+        flex: 2;
+        color: #bababa;
+        align-self: center;
+        font-size: 1.5rem;
+      }
+    }
   }
+}
 
-
+/*푸터*/
+footer{
+  
 }

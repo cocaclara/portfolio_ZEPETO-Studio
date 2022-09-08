@@ -52,6 +52,8 @@ h3 {
 
 /*헤더*/
 header {
+  position: fixed;
+  z-index: 100;
   width: 100%;
   min-width: 320px;
   height: 80px;
@@ -206,13 +208,13 @@ header a.list {
 /*메인*/
 main {
   width: 100%;
-  background: pink;
   /*시작하기 버튼*/
   /* 컨텐츠 목록 나열 사이즈*/
   /*섹션1 - main-home*/
   /*섹션2 - creators*/
   /*섹션3 - reality*/
   /*섹션4 - creator*/
+  /*섹션5 - profit*/
   /*섹션6 - get-start*/
 }
 main section:not(.main-home) {
@@ -353,6 +355,12 @@ main section.creator .profile-box .tag {
   font-size: 1.1rem;
   color: #5c5c61;
 }
+main section.profit {
+  background-color: #f8f8fa;
+}
+main section.get-start {
+  /*STEP*/
+}
 main section.get-start .content-text {
   margin-bottom: 40px;
 }
@@ -365,6 +373,48 @@ main section.get-start a.start {
   border-radius: 34px;
   font-size: 1.18rem;
   color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 0 20px;
   cursor: pointer;
-}/*# sourceMappingURL=main.css.map */
+}
+main section.get-start .step-box {
+  margin-top: 80px;
+  padding: 56px 75px;
+  background: #f8f8fa;
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+main section.get-start .step-box .step-list {
+  display: flex;
+}
+main section.get-start .step-box .step-item {
+  flex: 3;
+}
+main section.get-start .step-box .step-item .number {
+  font-size: 22px;
+  font-weight: 700;
+  background: #f0f0f0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  text-align: center;
+  margin: 0 auto;
+}
+main section.get-start .step-box .step-item dl {
+  margin-top: 22px;
+}
+main section.get-start .step-box .step-item dt {
+  font-size: 1.29rem;
+  font-weight: 700;
+}
+main section.get-start .step-box .step-item dd {
+  margin-top: 12px;
+  color: #5c5c61;
+}
+main section.get-start .step-box .right {
+  flex: 2;
+  color: #bababa;
+  align-self: center;
+  font-size: 1.5rem;
+}
+
+/*푸터*//*# sourceMappingURL=main.css.map */
