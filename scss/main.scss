@@ -13,6 +13,7 @@ html,body{
 ul,li{list-style: none;}
 a{text-decoration: none;}
 h3{font: 1.3rem sans-serif;}
+video{display: block;margin: 0 auto;}
 
 
 /*변수 선언하기*/
@@ -30,7 +31,7 @@ $copy-color: #99999c;
   max-width: 1440px;
   margin: auto;
   box-sizing: border-box;
-  background: #dafde3;
+  // background: #dafde3;
 }
 .content-text{
   margin-bottom: 80px;
@@ -283,7 +284,7 @@ main{
 
     video{
       width: 100%;
-      height: calc(100vh - 80px);
+      height: 100vh;
       // 대체 콘텐츠 가로세로비 유지 & 가득 채움
       object-fit: cover;
     }
@@ -379,6 +380,7 @@ main{
   /*섹션5 - profit*/
   section.profit{
     background-color: $content-back;
+    padding-bottom: 0;
   }
   
 
@@ -447,7 +449,63 @@ main{
   }
 }
 
+
 /*푸터*/
 footer{
-  
+  border-top: 1px solid #eee;
+  padding-top: 32px;
+  height: 150px;
+
+  .inner{
+    position: relative;
+    height: 100%;
+  }
+
+  .footer-nav{
+    position: absolute;top: 0;left: 0;
+      /*폰트사이즈 및 간격 고정*/
+
+    li{display: inline-block;}
+    li:not(:last-child)::after{
+      margin: 0 12px;
+      content: "\007C";
+      font-size: 5px;
+      color: #e9e9ef;
+    }
+    a{
+      font-size: 12px;
+      color: $content-gray;
+      line-height: 18px;
+    }
+  }
+
+  .footer-sns{
+    position: absolute;top: 0;right: 0;
+    display: flex;
+    
+    li{margin: 0 8px;}
+    a{
+      font-size: 20px;
+      color: $copy-color;
+    }
+  }
+
+  .lang-select-box{
+    position: absolute;top: 0;right: 150px;
+
+    select{
+      border: none;
+      font-size: 17px;
+      background: transparent;
+      height: 22px;
+      vertical-align: middle;
+    }
+  }
+
+  .copyright{
+    position: absolute;top: 25px;left: 0;
+    font-size: 12px;
+    color: $copy-color;
+    line-height: 18px;
+  }
 }

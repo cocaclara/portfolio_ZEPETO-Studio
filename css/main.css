@@ -25,6 +25,11 @@ h3 {
   font: 1.3rem sans-serif;
 }
 
+video {
+  display: block;
+  margin: 0 auto;
+}
+
 /*변수 선언하기*/
 #wrap {
   width: 100%;
@@ -35,7 +40,6 @@ h3 {
   max-width: 1440px;
   margin: auto;
   box-sizing: border-box;
-  background: #dafde3;
 }
 
 .content-text {
@@ -274,7 +278,7 @@ main section.main-home {
 }
 main section.main-home video {
   width: 100%;
-  height: calc(100vh - 80px);
+  height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -357,6 +361,7 @@ main section.creator .profile-box .tag {
 }
 main section.profit {
   background-color: #f8f8fa;
+  padding-bottom: 0;
 }
 main section.get-start {
   /*STEP*/
@@ -417,4 +422,66 @@ main section.get-start .step-box .right {
   font-size: 1.5rem;
 }
 
-/*푸터*//*# sourceMappingURL=main.css.map */
+/*푸터*/
+footer {
+  border-top: 1px solid #eee;
+  padding-top: 32px;
+  height: 150px;
+}
+footer .inner {
+  position: relative;
+  height: 100%;
+}
+footer .footer-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*폰트사이즈 및 간격 고정*/
+}
+footer .footer-nav li {
+  display: inline-block;
+}
+footer .footer-nav li:not(:last-child)::after {
+  margin: 0 12px;
+  content: "|";
+  font-size: 5px;
+  color: #e9e9ef;
+}
+footer .footer-nav a {
+  font-size: 12px;
+  color: #5c5c61;
+  line-height: 18px;
+}
+footer .footer-sns {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+}
+footer .footer-sns li {
+  margin: 0 8px;
+}
+footer .footer-sns a {
+  font-size: 20px;
+  color: #99999c;
+}
+footer .lang-select-box {
+  position: absolute;
+  top: 0;
+  right: 150px;
+}
+footer .lang-select-box select {
+  border: none;
+  font-size: 17px;
+  background: transparent;
+  height: 22px;
+  vertical-align: middle;
+}
+footer .copyright {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  font-size: 12px;
+  color: #99999c;
+  line-height: 18px;
+}/*# sourceMappingURL=main.css.map */
