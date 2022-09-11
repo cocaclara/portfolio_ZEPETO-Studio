@@ -73,6 +73,9 @@ $copy-color: #99999c;
 .delay{
   animation-delay: 0.5s;
 }
+.delay2{
+  animation-delay: 0.7s;
+}
 .on{
   @include animate(0.75s, both, fade-up);
   @include keyframe (fade-up) {
@@ -229,7 +232,7 @@ header{
   ul.hd-top{
     display: inline-flex;
     justify-content: end;
-    flex: 1;
+    flex: 2;
 
     li{
       display: inline-block;
@@ -242,6 +245,12 @@ header{
       padding: 8px 20px;
       border-radius: 6px;
       vertical-align: middle;
+      box-sizing: border-box;
+
+      &:hover{
+        background: #fff;
+        color: $header-black;
+      }
     }
 
     i{
@@ -395,8 +404,8 @@ main{
       span{
         margin-top: 15px;
         font-size: 1rem;
-        line-height: 0.7rem;
-        white-space: pre-wrap;
+        // line-height: 0.7rem;
+        // white-space: pre-wrap;
         word-spacing: 2px;
       }
 

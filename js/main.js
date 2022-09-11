@@ -9,12 +9,14 @@ $(document).ready(function () {
     $(this).siblings('a').css('color','#bababa');
   });
 
-  // 브라우저의 크기가 변하면 대상 엘리먼트의 위치값을 다시 할당
-  $(window).on('resize', function() {
-    insertTargetPosition();
-  });
 
-  // .fade-up
+  // 브라우저의 크기가 변하면 대상 엘리먼트의 위치값을 다시 할당
+  // $(window).on('resize', function() {
+  //   insertTargetPosition();
+  // });
+
+
+  // 스크롤 조절에 따라 .fade-up에 'on'클래스 추가하기(1번만)
   $(window).scroll(function(){
     $('.fade-up').each(function(){
       var $this = $(this),
@@ -33,7 +35,7 @@ $(document).ready(function () {
       }
     });
   });
-  // 초기 화면에서
+  // 초기 화면에서 페이드업 보이기
   $('.fade-up').each(function(){
     var $this = $(this),
         $window_top = $(window).scrollTop(),
@@ -45,7 +47,5 @@ $(document).ready(function () {
       $this.addClass('on');
     }
   });
-  
-
 
 });
