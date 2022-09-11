@@ -47,6 +47,45 @@ $copy-color: #99999c;
   }
 }
 
+// /*페이드-업 효과*/
+// .fade-up{
+//   opacity: 0;
+//   position: relative;bottom: -70px;
+// }
+
+
+@mixin animate($duration, $mode, $name){
+  animation-duration: $duration;
+  animation-fill-mode: $mode;
+  animation-name: $name;
+}
+@mixin keyframe ($animation_name) {
+  @keyframes #{$animation_name} {
+    @content;    
+  }
+}
+
+
+/*페이드-업 효과*/
+.fade-up{
+  opacity: 0;
+}
+.delay{
+  animation-delay: 0.5s;
+}
+.on{
+  @include animate(0.75s, both, fade-up);
+  @include keyframe (fade-up) {
+    100% {
+      opacity: 1;
+      transform: 0;
+    }0%{
+      // opacity: 0;
+      transform: translateY(80px);
+    }
+  }
+}
+
 /*헤더*/
 header{
   position: fixed;z-index: 100;
@@ -85,10 +124,19 @@ header{
         }
 
         a{display: block;color: $header-gray;}
-        span{display: none;}
-        span.on{
+        .add::after{
           display: inline-block;
+          width: 10px;
+          font-family: "FontAweSome";
+          content: "\f107";
         }
+        .add:hover::after{
+          content: "\f106";
+        }
+        // span{display: none;}
+        // span.on{
+        //   display: inline-block;
+        // }
 
         a:hover{
           color: #fff;
@@ -260,6 +308,7 @@ main{
       // white-space: pre-wrap;
     }
 
+    // 더 알아보기
     a.plus{
       margin-top: 40px;
       display: inline-block;
@@ -271,7 +320,7 @@ main{
       font-weight: 700;
       font-size: 1rem;
       color: #fff;
-      box-shadow: rgba(0,0,0,0.2) 0 0 20px;
+      // box-shadow: rgba(0,0,0,0.2) 0 0 20px;
       cursor: pointer;
     }
   }
@@ -381,6 +430,10 @@ main{
   section.profit{
     background-color: $content-back;
     padding-bottom: 0;
+
+    .content-text{
+      margin: 0;
+    }
   }
   
 
@@ -499,11 +552,18 @@ footer{
       background: transparent;
       height: 22px;
       vertical-align: middle;
+
+      [selected]{
+        color: $point-color;
+      }
+      option:hover{
+        background-color: #eee !important;
+      }
     }
   }
 
   .copyright{
-    position: absolute;top: 25px;left: 0;
+    position: absolute;top: 30px;left: 0;
     font-size: 12px;
     color: $copy-color;
     line-height: 18px;

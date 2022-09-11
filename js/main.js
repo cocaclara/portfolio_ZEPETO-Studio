@@ -8,4 +8,44 @@ $(document).ready(function () {
   $('.lnb').mouseout(function(){
     $(this).siblings('a').css('color','#bababa');
   });
+
+  // 브라우저의 크기가 변하면 대상 엘리먼트의 위치값을 다시 할당
+  $(window).on('resize', function() {
+    insertTargetPosition();
+  });
+
+  // .fade-up
+  $(window).scroll(function(){
+    $('.fade-up').each(function(){
+      var $this = $(this),
+          $window_top = $(window).scrollTop(),
+          $window_bottom = $(window).scrollTop() + $(window).height(),
+          $element_top = $this.offset().top;    // .offset()은 좌표값
+  
+      // var element_bottom = $this.offset().top + $this.outerHeight()/3;
+      // if( window_bottom > element_bottom ){
+      //   $this.addClass('on');
+      // }
+
+      // 윈도우 창화면(top, bottom) 사이에 element가 들어갈 때
+      if( $window_top <= $element_top && $window_bottom >= $element_top){
+        $this.addClass('on');
+      }
+    });
+  });
+  // 초기 화면에서
+  $('.fade-up').each(function(){
+    var $this = $(this),
+        $window_top = $(window).scrollTop(),
+        $window_bottom = $(window).scrollTop() + $(window).height(),
+        $element_top = $this.offset().top;    // .offset()은 좌표값
+
+    // 윈도우 창화면(top, bottom) 사이에 element가 들어갈 때
+    if( $window_top <= $element_top && $window_bottom >= $element_top){
+      $this.addClass('on');
+    }
+  });
+  
+
+
 });

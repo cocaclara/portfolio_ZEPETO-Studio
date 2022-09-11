@@ -54,6 +54,43 @@ video {
   letter-spacing: -0.2px;
 }
 
+/*페이드-업 효과*/
+.fade-up {
+  opacity: 0;
+}
+
+.delay {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.on {
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-name: fade-up;
+          animation-name: fade-up;
+}
+@-webkit-keyframes fade-up {
+  100% {
+    opacity: 1;
+    transform: 0;
+  }
+  0% {
+    transform: translateY(80px);
+  }
+}
+@keyframes fade-up {
+  100% {
+    opacity: 1;
+    transform: 0;
+  }
+  0% {
+    transform: translateY(80px);
+  }
+}
+
 /*헤더*/
 header {
   position: fixed;
@@ -92,11 +129,14 @@ header nav ul.gnb > li a {
   display: block;
   color: #bababa;
 }
-header nav ul.gnb > li span {
-  display: none;
-}
-header nav ul.gnb > li span.on {
+header nav ul.gnb > li .add::after {
   display: inline-block;
+  width: 10px;
+  font-family: "FontAweSome";
+  content: "\f107";
+}
+header nav ul.gnb > li .add:hover::after {
+  content: "\f106";
 }
 header nav ul.gnb > li a:hover {
   color: #fff;
@@ -269,7 +309,6 @@ main .content-list li a.plus {
   font-weight: 700;
   font-size: 1rem;
   color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 0 20px;
   cursor: pointer;
 }
 main section.main-home {
@@ -362,6 +401,9 @@ main section.creator .profile-box .tag {
 main section.profit {
   background-color: #f8f8fa;
   padding-bottom: 0;
+}
+main section.profit .content-text {
+  margin: 0;
 }
 main section.get-start {
   /*STEP*/
@@ -477,9 +519,15 @@ footer .lang-select-box select {
   height: 22px;
   vertical-align: middle;
 }
+footer .lang-select-box select [selected] {
+  color: #5c46ff;
+}
+footer .lang-select-box select option:hover {
+  background-color: #eee !important;
+}
 footer .copyright {
   position: absolute;
-  top: 25px;
+  top: 30px;
   left: 0;
   font-size: 12px;
   color: #99999c;
