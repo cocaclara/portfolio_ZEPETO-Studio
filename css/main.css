@@ -1,4 +1,11 @@
 @charset "UTF-8";
+/*변수파일 불러오기*/ /*변수 선언하기*/
+/*반응형 화면 크기*/
+/*반응형 헤더 변화*/
+/*반응형, 브라우저 크기가 767px 이하일 때*/
+/*반응형, 브라우저 크기가 768px 이상 1023px 이하일 때*/
+/*반응형, 브라우저 크기가 1024px 이상일 때*/
+/*헤더 1199이하일 때 변화*/
 * {
   margin: 0;
   padding: 0;
@@ -30,7 +37,6 @@ video {
   margin: 0 auto;
 }
 
-/*변수 선언하기*/
 #wrap {
   width: 100%;
   overflow: hidden;
@@ -74,10 +80,10 @@ video {
           animation-duration: 0.75s;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
-  -webkit-animation-name: fade-up;
-          animation-name: fade-up;
+  -webkit-animation-name: fade_up;
+          animation-name: fade_up;
 }
-@-webkit-keyframes fade-up {
+@-webkit-keyframes fade_up {
   100% {
     opacity: 1;
     transform: 0;
@@ -86,7 +92,7 @@ video {
     transform: translateY(80px);
   }
 }
-@keyframes fade-up {
+@keyframes fade_up {
   100% {
     opacity: 1;
     transform: 0;
@@ -114,6 +120,7 @@ header #header-wrap {
 }
 header h1.logo {
   flex: 1;
+  padding-right: 1.8rem;
 }
 header h1.logo img {
   display: block;
@@ -122,29 +129,60 @@ header h1.logo img {
 header nav {
   flex: 5;
 }
+@media (max-width: 1199px) {
+  header nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    width: 320px;
+    height: 100%;
+  }
+  header nav.show {
+    display: block;
+  }
+}
 header nav ul.gnb > li {
   display: inline-block;
   vertical-align: top;
   margin-right: 2rem;
 }
+@media (max-width: 1199px) {
+  header nav ul.gnb > li {
+    display: block;
+    position: relative;
+    top: 100px;
+    left: 30px;
+    font-size: 1.25rem;
+    line-height: 60px;
+  }
+}
 header nav ul.gnb > li:hover .lnb {
   display: block;
 }
-header nav ul.gnb > li a {
+header nav ul.gnb > li > a {
   display: block;
   color: #bababa;
 }
-header nav ul.gnb > li .add::after {
+@media (max-width: 1199px) {
+  header nav ul.gnb > li > a {
+    color: #000008;
+  }
+}
+@media (max-width: 1199px) {
+  header nav ul.gnb > li > a:hover {
+    color: #000008;
+  }
+}
+header nav ul.gnb > li > a.add::after {
   display: inline-block;
   width: 10px;
   font-family: "FontAweSome";
   content: "\f107";
 }
-header nav ul.gnb > li .add:hover::after {
+header nav ul.gnb > li > a.add.hover::after { /*'hover' 클래스로 제어*/
   content: "\f106";
-}
-header nav ul.gnb > li a:hover {
-  color: #fff;
 }
 header nav ul.gnb > li .new {
   position: relative;
@@ -161,6 +199,11 @@ header nav ul.gnb > li .new::before {
   width: 28px;
   height: 20px;
 }
+@media (max-width: 1199px) {
+  header nav ul.gnb > li .new::before {
+    display: none;
+  }
+}
 header nav ul.gnb .lnb {
   display: none;
   position: absolute;
@@ -170,12 +213,25 @@ header nav ul.gnb .lnb {
   border-radius: 16px;
   width: 240px;
 }
+header nav ul.gnb .lnb.show {
+  display: block;
+}
+@media (max-width: 1199px) {
+  header nav ul.gnb .lnb {
+    position: relative;
+  }
+}
 header nav ul.gnb .lnb a {
   display: block;
   font-size: 1rem;
   color: #292930;
   height: 70px;
   line-height: 70px;
+}
+@media (max-width: 1199px) {
+  header nav ul.gnb .lnb a {
+    height: 53px;
+  }
 }
 header nav ul.gnb .lnb a::before {
   background-size: cover;
@@ -225,6 +281,19 @@ header nav ul.gnb .lnb .education::after {
   background-size: contain;
   background-position: center;
 }
+header nav a.close {
+  display: none;
+  position: absolute;
+  top: 15px;
+  left: 30px;
+  font-size: 1.8rem;
+  color: #000008;
+}
+@media (max-width: 1199px) {
+  header nav a.close {
+    display: block;
+  }
+}
 header ul.hd-top {
   display: inline-flex;
   justify-content: end;
@@ -251,12 +320,22 @@ header ul.hd-top i {
   color: #fff;
   font-size: 25px;
   margin-left: 20px;
+  padding-right: 1.8rem;
 }
 header a.list {
   display: none;
   border: none;
   background: transparent;
   color: #fff;
+  order: -1;
+  font-size: 1.8rem;
+  padding: 0 1.8rem;
+  cursor: pointer;
+}
+@media (max-width: 1199px) {
+  header a.list {
+    display: block;
+  }
 }
 
 /*메인*/
@@ -264,12 +343,6 @@ main {
   width: 100%;
   /*시작하기 버튼*/
   /* 컨텐츠 목록 나열 사이즈*/
-  /*섹션1 - main-home*/
-  /*섹션2 - creators*/
-  /*섹션3 - reality*/
-  /*섹션4 - creator*/
-  /*섹션5 - profit*/
-  /*섹션6 - get-start*/
 }
 main section:not(.main-home) {
   padding: 120px 0;
@@ -322,6 +395,7 @@ main .content-list li a.plus {
   cursor: pointer;
 }
 main section.main-home {
+  /*섹션1 - main-home*/
   overflow: hidden;
   position: relative;
 }
@@ -348,10 +422,14 @@ main section.main-home .inner-text h2 {
   color: #fff;
   text-shadow: rgba(0, 0, 0, 0.2) 0 0 8px;
 }
+main section.creators {
+  /*섹션2 - creators*/
+}
 main section.creators img {
   margin-bottom: 60px;
 }
 main section.reality {
+  /*섹션3 - reality*/
   background-color: #f8f8fa;
 }
 main section.reality .reality-list > li:not(first-child) {
@@ -390,6 +468,9 @@ main section.reality .content-list > li a {
   left: 60px;
   right: 60px;
 }
+main section.creator {
+  /*섹션4 - creator*/
+}
 main section.creator .content-text {
   margin-bottom: 140px;
 }
@@ -407,6 +488,7 @@ main section.creator .profile-box .tag {
   color: #5c5c61;
 }
 main section.profit {
+  /*섹션5 - profit*/
   background-color: #f8f8fa;
   padding-bottom: 0;
 }
@@ -414,7 +496,7 @@ main section.profit .content-text {
   margin: 0;
 }
 main section.get-start {
-  /*STEP*/
+  /*섹션6 - get-start*/
 }
 main section.get-start .content-text {
   margin-bottom: 40px;
@@ -431,6 +513,7 @@ main section.get-start a.start {
   cursor: pointer;
 }
 main section.get-start .step-box {
+  /*STEP*/
   margin-top: 80px;
   padding: 56px 75px;
   background: #f8f8fa;

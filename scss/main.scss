@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+/*변수파일 불러오기*/
+@import './util.scss';
+
 *{
   margin: 0; padding: 0; box-sizing: border-box !important;
 }
@@ -14,17 +17,6 @@ ul,li{list-style: none;}
 a{text-decoration: none;}
 h3{font: 1.3rem sans-serif;}
 video{display: block;margin: 0 auto;}
-
-
-/*변수 선언하기*/
-$header-black: #000008;
-$header-gray: #bababa;
-$content-black: #292930;
-$content-gray: #5c5c61;
-$content-back: #f8f8fa;
-$point-color: #5c46ff;
-$copy-color: #99999c;
-
 
 #wrap{width: 100%;overflow: hidden;}
 .inner{
@@ -47,24 +39,6 @@ $copy-color: #99999c;
   }
 }
 
-// /*페이드-업 효과*/
-// .fade-up{
-//   opacity: 0;
-//   position: relative;bottom: -70px;
-// }
-
-
-@mixin animate($duration, $mode, $name){
-  animation-duration: $duration;
-  animation-fill-mode: $mode;
-  animation-name: $name;
-}
-@mixin keyframe ($animation_name) {
-  @keyframes #{$animation_name} {
-    @content;    
-  }
-}
-
 
 /*페이드-업 효과*/
 .fade-up{
@@ -77,8 +51,9 @@ $copy-color: #99999c;
   animation-delay: 0.7s;
 }
 .on{
-  @include animate(0.75s, both, fade-up);
-  @include keyframe (fade-up) {
+                // 지속시간, 모드, 이름
+  @include animate(0.75s, both, fade_up);
+  @include keyframe (fade_up) {
     100% {
       opacity: 1;
       transform: 0;
@@ -106,6 +81,7 @@ header{
 
   h1.logo{
     flex: 1;
+    padding-right: 1.8rem;
 
     img{
       display: block;
@@ -116,60 +92,88 @@ header{
   nav{
     flex: 5;
 
+    @include header-change{
+      display: none;
+
+      position: fixed;top: 0;left: 0;
+      background: #fff;
+      width: 320px;
+      height: 100%;
+      &.show{ display: block;}
+    }
+
     ul.gnb{
       >li{
         display: inline-block;
         vertical-align: top;
         margin-right: 2rem;
 
+        @include header-change{
+          display: block;
+          position: relative;
+          top: 100px;left: 30px;
+          font-size: 1.25rem;
+          line-height: 60px;
+        }
+
         &:hover{
           .lnb{display: block;}
         }
 
-        a{display: block;color: $header-gray;}
-        .add::after{
-          display: inline-block;
-          width: 10px;
-          font-family: "FontAweSome";
-          content: "\f107";
-        }
-        .add:hover::after{
-          content: "\f106";
-        }
-        // span{display: none;}
-        // span.on{
-        //   display: inline-block;
-        // }
+        >a{
+          display: block;color: $header-gray;
+        
+          @include header-change{color: $header-black;}
 
-        a:hover{
-          color: #fff;
+          &:hover{  // color: #fff;   //클래스로 제어
+            @include header-change{color: $header-black;}
+          }
+        }
+
+        >a.add{
+          &::after{
+            display: inline-block;
+            width: 10px;
+            font-family: "FontAweSome";
+            content: "\f107";
+          }
+
+          &.hover::after{   /*'hover' 클래스로 제어*/
+            content: "\f106";}
         }
         .new{
           position: relative;
-        }
-        .new::before{
-          content: "";
-          position: absolute;
-          top: 10%;
-          left: 50%;
-          transform: translateX(-50%);
-          background-image: url('../img/icon_new_bubble.svg');
-          background-repeat: no-repeat;
-          background-size: contain;
 
-          width: 28px;
-          height: 20px;
-        
+          &::before{
+            content: "";
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-image: url('../img/icon_new_bubble.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 28px;
+            height: 20px;
+          
+            @include header-change{display: none;}
+          }
         }
       }
 
       .lnb{
         display: none;
+
         position: absolute; z-index: 100;
         transform: translate(-17px, -15px);
         background: #fff;
         border-radius: 16px;
         width: 240px;
+        &.show{display: block;}
+
+        @include header-change{
+          position: relative;
+        }
 
         a{
           display: block;
@@ -177,6 +181,10 @@ header{
           color: $content-black;
           height: 70px;
           line-height: 70px;
+
+          @include header-change{
+            height: 53px;
+          }
 
           &::before{
             background-size: cover;
@@ -227,6 +235,18 @@ header{
         }
       }
     }
+
+    a.close{
+      display: none;
+      
+      position: absolute;top: 15px;left: 30px;
+      font-size: 1.8rem;
+      color: $header-black;
+
+      @include header-change{
+        display: block;
+      }
+    }
   }
 
   ul.hd-top{
@@ -258,6 +278,7 @@ header{
       color: #fff;
       font-size: 25px;
       margin-left: 20px;
+      padding-right: 1.8rem;
     }
   }
 
@@ -266,6 +287,14 @@ header{
     border: none;
     background: transparent;
     color: #fff;
+    order: -1;
+    font-size: 1.8rem;
+    padding: 0 1.8rem;
+    cursor: pointer;
+
+    @include header-change{
+      display: block;
+    }
   }
 }
 
@@ -335,8 +364,8 @@ main{
   }
 
 
-  /*섹션1 - main-home*/
   section.main-home{
+    /*섹션1 - main-home*/
     overflow: hidden;
     position: relative;
 
@@ -366,14 +395,14 @@ main{
   }
 
   
-  /*섹션2 - creators*/
   section.creators{
+    /*섹션2 - creators*/
     img{margin-bottom: 60px;}
   }
 
 
-  /*섹션3 - reality*/
   section.reality{
+    /*섹션3 - reality*/
     background-color: $content-back;
 
     .reality-list>li:not(first-child){
@@ -418,8 +447,8 @@ main{
   }
 
 
-  /*섹션4 - creator*/
   section.creator{
+    /*섹션4 - creator*/
     .content-text{
       margin-bottom: 140px;
     }
@@ -435,8 +464,8 @@ main{
     }
   }
 
-  /*섹션5 - profit*/
   section.profit{
+    /*섹션5 - profit*/
     background-color: $content-back;
     padding-bottom: 0;
 
@@ -446,8 +475,8 @@ main{
   }
   
 
-  /*섹션6 - get-start*/
   section.get-start{
+    /*섹션6 - get-start*/
     .content-text{
       margin-bottom: 40px;
     }
@@ -464,8 +493,9 @@ main{
       cursor: pointer;
     }
 
-    /*STEP*/
+
     .step-box{
+      /*STEP*/
       margin-top: 80px;
       padding: 56px 75px;
       background: $content-back;

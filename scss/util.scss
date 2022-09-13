@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+/*변수 선언하기*/
+$header-black: #000008;
+$header-gray: #bababa;
+$content-black: #292930;
+$content-gray: #5c5c61;
+$content-back: #f8f8fa;
+$point-color: #5c46ff;
+$copy-color: #99999c;
+
+
+// 페이드업 효과 주기위해 사용
+@mixin animate($duration, $mode, $name){
+  animation-duration: $duration;
+  animation-fill-mode: $mode;
+  animation-name: $name;
+}
+@mixin keyframe ($animation_name) {
+  @keyframes #{$animation_name} {
+    @content;    
+  }
+}
+
+
+/*반응형 화면 크기*/
+$mobile: 767px;
+$tablet: 1023px;
+$desktop: 1024px;
+/*반응형 헤더 변화*/
+$header-change: 1199px;
+
+/*반응형, 브라우저 크기가 767px 이하일 때*/
+@mixin mobile{
+  @media (max-width: $mobile){
+    @content;
+  }
+}
+/*반응형, 브라우저 크기가 768px 이상 1023px 이하일 때*/
+@mixin tablet{
+  @media (min-width: $mobile+1) and (max-width: $tablet){
+    @content;
+  }
+}
+/*반응형, 브라우저 크기가 1024px 이상일 때*/
+@mixin desktop{
+  @media (min-width: $desktop){
+    @content;
+  }
+}
+
+/*헤더 1199이하일 때 변화*/
+@mixin header-change{
+  @media (max-width: $header-change){
+    @content;
+  }
+}

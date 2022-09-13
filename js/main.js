@@ -1,19 +1,75 @@
 "use strict";
 
 $(document).ready(function () {
-  // .lnb li 마우스 오버(아웃) 시
-  $('.lnb').mouseover(function(){
-    $(this).siblings('a').css('color','#fff');
-  });
-  $('.lnb').mouseout(function(){
-    $(this).siblings('a').css('color','#bababa');
+  // 리사이즈 시 자동 새로고침********************
+  $(window).resize(function(){
+    document.location.reload();
   });
 
+  var wd = $(window).innerWidth();
 
-  // 브라우저의 크기가 변하면 대상 엘리먼트의 위치값을 다시 할당
-  // $(window).on('resize', function() {
-  //   insertTargetPosition();
-  // });
+  // 윈도우 width가 1190px이상일 때
+  function header_change(){
+    if (wd >= 1200) {
+      // .gnb > li 마우스오버(아웃) 시, a 컬러 변경(유지)
+      $('.gnb > li').mouseover(function(){
+        $(this).children('a').css('color','#fff').addClass('hover');
+      });
+      $('.gnb > li').mouseout(function(){
+        $(this).children('a').css('color','#bababa').removeClass('hover');
+            
+        if( $('.lnb').is(':visible') ){
+          $(this).children('a').css('color','#fff').addClass('hover');
+        }else{
+          // $(this).css('color','#bababa');
+          $(this).children('a').removeClass('hover');
+        }
+      });
+      // .lnb 마우스 오버(아웃) 시, .gnb li a 컬러 변경(유지)
+      $('.lnb').mouseover(function(){
+        $(this).siblings('a').css('color','#fff').addClass('hover');
+      });
+      $('.lnb').mouseout(function(){
+        $(this).siblings('a').css('color','#bababa').removeClass('hover');
+      });
+
+    }else{
+      // 1190px 미만일 때, 헤더
+      $('.gnb > li > a').css('color','$header-black');
+      // .gnb > li 마우스오버(아웃) 시)
+      $('.gnb > li').mouseover(function(){
+        $(this).children('a').css('color','$header-black').addClass('hover');
+      });
+      $('.gnb > li').mouseout(function(){
+        $(this).children('a').css('color','$header-black').removeClass('hover');
+            
+        if( $('.lnb').is(':visible') ){
+          $(this).children('a').addClass('hover');
+        }else{
+          $(this).children('a').removeClass('hover');
+        }
+      });
+      // .lnb 마우스 오버(아웃) 시, .gnb li a 컬러 변경(유지)
+      $('.lnb').mouseover(function(){
+        $(this).siblings('a').css('color','$header-black').addClass('hover');
+      });
+      $('.lnb').mouseout(function(){
+        $(this).siblings('a').css('color','$header-black').removeClass('hover');
+      });
+    }
+  }
+  header_change();
+
+  $('.gnb > li').click(function(){
+    $(this).children('ul').toggleClass('show');
+    
+    if( $('.lnb').is(':visible') ){
+      $(this).children('a').addClass('hover');
+    }else{
+      $(this).children('a').removeClass('hover');
+    }
+  });
+    
 
 
   // 스크롤 조절에 따라 .fade-up에 'on'클래스 추가하기(1번만)
