@@ -24,9 +24,13 @@ video{display: block;margin: 0 auto;}
   margin: auto;
   box-sizing: border-box;
   // background: #dafde3;
+
+  @include header-change{max-width: 980px;}
 }
 .content-text{
   margin-bottom: 80px;
+
+  @include tablet{padding: 0 40px;}
   
   h2.title{
     font-size: 3.5rem;
@@ -99,7 +103,6 @@ header{
       background: #fff;
       width: 320px;
       height: 100%;
-      &.show{ display: block;}
     }
 
     ul.gnb{
@@ -131,6 +134,8 @@ header{
         }
 
         >a.add{
+          &.hover{color: #fff;  /*'hover' 클래스로 제어*/}
+          &.change-hover{color: $header-black;  /*'hover' 클래스로 제어*/}
           &::after{
             display: inline-block;
             width: 10px;
@@ -138,8 +143,9 @@ header{
             content: "\f107";
           }
 
-          &.hover::after{   /*'hover' 클래스로 제어*/
-            content: "\f106";}
+          &.hover::after, &.change-hover::after{   /*'hover' 클래스로 제어*/
+            content: "\f106";
+          }
         }
         .new{
           position: relative;
@@ -398,6 +404,18 @@ main{
   section.creators{
     /*섹션2 - creators*/
     img{margin-bottom: 60px;}
+
+    li{
+      @include tablet{
+        display: block;
+        width: 100%;
+        max-width: initial;
+  
+        &:not(:first-child){
+          margin-top: 64px;
+        }
+      }
+    }
   }
 
 
@@ -405,8 +423,10 @@ main{
     /*섹션3 - reality*/
     background-color: $content-back;
 
-    .reality-list>li:not(first-child){
+    .reality-list>li:not(:first-child){
       margin-left: 36px;
+
+      @include tablet{margin: 36px auto 0;}
     }
     .reality-list>li{
       position: relative;
@@ -418,30 +438,77 @@ main{
       max-width: 320px;
       width: calc(33.333% - 36px);
       vertical-align: middle;
-    }
 
+      @include tablet{
+        display: block;
+        width: 92%;
+        max-width: initial;
+        height: initial;
+        margin: 0 auto;
+        text-align-last: left;
+        padding: 42px 42px 42px 0;
+      }
+    }
+    .content-list{
+      @include tablet{
+        display: flex;
+        align-items: center;
+      }
+    }
     .content-list>li{
       display: block;
       width: 100%;
       max-width: 286px;
 
-      img{
-        width: 5.17rem;
-      }
-      h4{margin-top: 32px;}
+      @include tablet{
+        max-width: initial;
 
+        &:nth-child(1){
+          flex:2;
+          justify-content: center;
+          display: inherit;
+        }
+        &:nth-child(2){
+          flex:6;
+        }
+        &:nth-child(3){
+          display: inherit;
+          flex:3;
+          justify-content: end;
+          font-size: 1.5rem;
+        }
+        i{color: #bababa;}
+      }
+
+      img{ width: 5.17rem; }
+      h4{
+        margin-top: 32px;
+      
+        @include tablet{margin-top: initial;}
+      }
       span{
         margin-top: 15px;
         font-size: 1rem;
-        // line-height: 0.7rem;
-        // white-space: pre-wrap;
         word-spacing: 2px;
+        text-align: left;
       }
-
       a{
         position: absolute;
         bottom: 32px;
         left: 60px;right: 60px;
+
+        @include tablet{
+          display: none;
+          position: initial;
+        }
+        &.right{
+          display: none;
+          text-align: right;
+
+          @include tablet{
+            display: block;
+          }
+        }
       }
     }
   }
@@ -472,6 +539,7 @@ main{
     .content-text{
       margin: 0;
     }
+    video{width: 100%;}
   }
   
 
@@ -502,12 +570,30 @@ main{
       border-radius: 16px;
       box-sizing: border-box;
 
+      @include tablet{
+        width: 92%;
+        margin: 80px auto 0;
+        padding: 48px 36px;
+      }
+
       .step-list{
         display: flex;
+
+        @include tablet{
+          flex-direction: column;
+          align-items: flex-start;
+        }
       }
 
       .step-item{
         flex: 3;
+
+        @include tablet{
+          display: inline-flex;
+          align-items: center;
+          text-align: left;
+        }
+
         .number{
           font-size: 22px;
           font-weight: 700;
@@ -518,6 +604,10 @@ main{
           line-height: 38px;
           text-align: center;
           margin: 0 auto;
+
+          @include tablet{
+            margin: auto 20px;
+          }
         }
         dl{
           margin-top: 22px;
@@ -531,11 +621,23 @@ main{
           color: $content-gray;
         }
       }
-      .right{
+      .right, .down{
         flex: 2;
         color: #bababa;
         align-self: center;
         font-size: 1.5rem;
+
+        @include tablet{
+          padding: 25px 0;
+        }
+      }
+      
+      .right{
+        @include tablet{display: none;}
+      }
+      .down{
+        display: none;
+        @include tablet{display: block;}
       }
     }
   }
@@ -551,6 +653,10 @@ footer{
   .inner{
     position: relative;
     height: 100%;
+
+    @include tablet{
+      width: 92%;
+    }
   }
 
   .footer-nav{

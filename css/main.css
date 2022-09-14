@@ -47,9 +47,19 @@ video {
   margin: auto;
   box-sizing: border-box;
 }
+@media (max-width: 1199px) {
+  .inner {
+    max-width: 980px;
+  }
+}
 
 .content-text {
   margin-bottom: 80px;
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  .content-text {
+    padding: 0 40px;
+  }
 }
 .content-text h2.title {
   font-size: 3.5rem;
@@ -139,9 +149,6 @@ header nav {
     width: 320px;
     height: 100%;
   }
-  header nav.show {
-    display: block;
-  }
 }
 header nav ul.gnb > li {
   display: inline-block;
@@ -175,13 +182,19 @@ header nav ul.gnb > li > a {
     color: #000008;
   }
 }
+header nav ul.gnb > li > a.add.hover {
+  color: #fff; /*'hover' 클래스로 제어*/
+}
+header nav ul.gnb > li > a.add.change-hover {
+  color: #000008; /*'hover' 클래스로 제어*/
+}
 header nav ul.gnb > li > a.add::after {
   display: inline-block;
   width: 10px;
   font-family: "FontAweSome";
   content: "\f107";
 }
-header nav ul.gnb > li > a.add.hover::after { /*'hover' 클래스로 제어*/
+header nav ul.gnb > li > a.add.hover::after, header nav ul.gnb > li > a.add.change-hover::after { /*'hover' 클래스로 제어*/
   content: "\f106";
 }
 header nav ul.gnb > li .new {
@@ -428,12 +441,27 @@ main section.creators {
 main section.creators img {
   margin-bottom: 60px;
 }
+@media (min-width: 767px) and (max-width: 1023px) {
+  main section.creators li {
+    display: block;
+    width: 100%;
+    max-width: initial;
+  }
+  main section.creators li:not(:first-child) {
+    margin-top: 64px;
+  }
+}
 main section.reality {
   /*섹션3 - reality*/
   background-color: #f8f8fa;
 }
-main section.reality .reality-list > li:not(first-child) {
+main section.reality .reality-list > li:not(:first-child) {
   margin-left: 36px;
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  main section.reality .reality-list > li:not(:first-child) {
+    margin: 36px auto 0;
+  }
 }
 main section.reality .reality-list > li {
   position: relative;
@@ -446,10 +474,50 @@ main section.reality .reality-list > li {
   width: calc(33.333% - 36px);
   vertical-align: middle;
 }
+@media (min-width: 767px) and (max-width: 1023px) {
+  main section.reality .reality-list > li {
+    display: block;
+    width: 92%;
+    max-width: initial;
+    height: initial;
+    margin: 0 auto;
+    -moz-text-align-last: left;
+         text-align-last: left;
+    padding: 42px 42px 42px 0;
+  }
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  main section.reality .content-list {
+    display: flex;
+    align-items: center;
+  }
+}
 main section.reality .content-list > li {
   display: block;
   width: 100%;
   max-width: 286px;
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  main section.reality .content-list > li {
+    max-width: initial;
+  }
+  main section.reality .content-list > li:nth-child(1) {
+    flex: 2;
+    justify-content: center;
+    display: inherit;
+  }
+  main section.reality .content-list > li:nth-child(2) {
+    flex: 6;
+  }
+  main section.reality .content-list > li:nth-child(3) {
+    display: inherit;
+    flex: 3;
+    justify-content: end;
+    font-size: 1.5rem;
+  }
+  main section.reality .content-list > li i {
+    color: #bababa;
+  }
 }
 main section.reality .content-list > li img {
   width: 5.17rem;
@@ -457,16 +525,37 @@ main section.reality .content-list > li img {
 main section.reality .content-list > li h4 {
   margin-top: 32px;
 }
+@media (min-width: 767px) and (max-width: 1023px) {
+  main section.reality .content-list > li h4 {
+    margin-top: initial;
+  }
+}
 main section.reality .content-list > li span {
   margin-top: 15px;
   font-size: 1rem;
   word-spacing: 2px;
+  text-align: left;
 }
 main section.reality .content-list > li a {
   position: absolute;
   bottom: 32px;
   left: 60px;
   right: 60px;
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  main section.reality .content-list > li a {
+    display: none;
+    position: initial;
+  }
+}
+main section.reality .content-list > li a.right {
+  display: none;
+  text-align: right;
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  main section.reality .content-list > li a.right {
+    display: block;
+  }
 }
 main section.creator {
   /*섹션4 - creator*/
@@ -495,6 +584,9 @@ main section.profit {
 main section.profit .content-text {
   margin: 0;
 }
+main section.profit video {
+  width: 100%;
+}
 main section.get-start {
   /*섹션6 - get-start*/
 }
@@ -520,11 +612,31 @@ main section.get-start .step-box {
   border-radius: 16px;
   box-sizing: border-box;
 }
+@media (min-width: 767px) and (max-width: 1023px) {
+  main section.get-start .step-box {
+    width: 92%;
+    margin: 80px auto 0;
+    padding: 48px 36px;
+  }
+}
 main section.get-start .step-box .step-list {
   display: flex;
 }
+@media (min-width: 767px) and (max-width: 1023px) {
+  main section.get-start .step-box .step-list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 main section.get-start .step-box .step-item {
   flex: 3;
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  main section.get-start .step-box .step-item {
+    display: inline-flex;
+    align-items: center;
+    text-align: left;
+  }
 }
 main section.get-start .step-box .step-item .number {
   font-size: 22px;
@@ -537,6 +649,11 @@ main section.get-start .step-box .step-item .number {
   text-align: center;
   margin: 0 auto;
 }
+@media (min-width: 767px) and (max-width: 1023px) {
+  main section.get-start .step-box .step-item .number {
+    margin: auto 20px;
+  }
+}
 main section.get-start .step-box .step-item dl {
   margin-top: 22px;
 }
@@ -548,11 +665,29 @@ main section.get-start .step-box .step-item dd {
   margin-top: 12px;
   color: #5c5c61;
 }
-main section.get-start .step-box .right {
+main section.get-start .step-box .right, main section.get-start .step-box .down {
   flex: 2;
   color: #bababa;
   align-self: center;
   font-size: 1.5rem;
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  main section.get-start .step-box .right, main section.get-start .step-box .down {
+    padding: 25px 0;
+  }
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  main section.get-start .step-box .right {
+    display: none;
+  }
+}
+main section.get-start .step-box .down {
+  display: none;
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  main section.get-start .step-box .down {
+    display: block;
+  }
 }
 
 /*푸터*/
@@ -564,6 +699,11 @@ footer {
 footer .inner {
   position: relative;
   height: 100%;
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  footer .inner {
+    width: 92%;
+  }
 }
 footer .footer-nav {
   position: absolute;

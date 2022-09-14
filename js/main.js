@@ -10,16 +10,16 @@ $(document).ready(function () {
 
   // 윈도우 width가 1190px이상일 때
   function header_change(){
-    if (wd >= 1200) {
+    if (wd >= 1200) {   //1200px 이상일 때
       // .gnb > li 마우스오버(아웃) 시, a 컬러 변경(유지)
       $('.gnb > li').mouseover(function(){
-        $(this).children('a').css('color','#fff').addClass('hover');
+        $(this).children('a').addClass('hover');
       });
       $('.gnb > li').mouseout(function(){
-        $(this).children('a').css('color','#bababa').removeClass('hover');
+        $(this).children('a').removeClass('hover');
             
-        if( $('.lnb').is(':visible') ){
-          $(this).children('a').css('color','#fff').addClass('hover');
+        if( $(this).has('ul') && $('.lnb').is(':visible') ){
+          $(this).children('a').addClass('hover');
         }else{
           // $(this).css('color','#bababa');
           $(this).children('a').removeClass('hover');
@@ -27,49 +27,61 @@ $(document).ready(function () {
       });
       // .lnb 마우스 오버(아웃) 시, .gnb li a 컬러 변경(유지)
       $('.lnb').mouseover(function(){
-        $(this).siblings('a').css('color','#fff').addClass('hover');
+        $(this).siblings('a').addClass('hover');
       });
       $('.lnb').mouseout(function(){
-        $(this).siblings('a').css('color','#bababa').removeClass('hover');
+        $(this).siblings('a').removeClass('hover');
       });
 
-    }else{
-      // 1190px 미만일 때, 헤더
+
+    }else{  // 1199px 미만일 때, 헤더
       $('.gnb > li > a').css('color','$header-black');
       // .gnb > li 마우스오버(아웃) 시)
       $('.gnb > li').mouseover(function(){
-        $(this).children('a').css('color','$header-black').addClass('hover');
+        $(this).children('a').addClass('change-hover');
       });
       $('.gnb > li').mouseout(function(){
-        $(this).children('a').css('color','$header-black').removeClass('hover');
+        $(this).children('a').removeClass('change-hover');
             
         if( $('.lnb').is(':visible') ){
-          $(this).children('a').addClass('hover');
+          $(this).children('a').addClass('change-hover');
         }else{
-          $(this).children('a').removeClass('hover');
+          $(this).children('a').removeClass('change-hover');
         }
       });
       // .lnb 마우스 오버(아웃) 시, .gnb li a 컬러 변경(유지)
       $('.lnb').mouseover(function(){
-        $(this).siblings('a').css('color','$header-black').addClass('hover');
+        $(this).siblings('a').addClass('change-hover');
       });
       $('.lnb').mouseout(function(){
-        $(this).siblings('a').css('color','$header-black').removeClass('hover');
+        $(this).siblings('a').removeClass('change-hover');
       });
     }
   }
   header_change();
 
-  $('.gnb > li').click(function(){
+  $(document).on('click','.gnb > li',function(){
     $(this).children('ul').toggleClass('show');
     
-    if( $('.lnb').is(':visible') ){
-      $(this).children('a').addClass('hover');
-    }else{
-      $(this).children('a').removeClass('hover');
+    if( $(this).children('.lnb').is(':visible') ){
+      if(wd < 1200){
+        $(this).children('a').addClass('change-hover');
+      }else{
+        $(this).children('a').addClass('hover');
+      }
     }
-  });
     
+    $(this).children('a').removeClass('change-hover','hover');
+  });
+  
+  // .list 버튼
+  $('.list').click(function(){
+    $('nav').show();
+  });
+  // .close 버튼
+  $('.close').click(function(){
+    $('nav').hide();
+  });
 
 
   // 스크롤 조절에 따라 .fade-up에 'on'클래스 추가하기(1번만)
