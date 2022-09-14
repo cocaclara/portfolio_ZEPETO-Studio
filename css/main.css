@@ -294,6 +294,28 @@ header nav ul.gnb .lnb .education::after {
   background-size: contain;
   background-position: center;
 }
+header nav ul.gnb .lang-select-box {
+  display: none;
+  margin-top: 20px;
+}
+@media (max-width: 1199px) {
+  header nav ul.gnb .lang-select-box {
+    display: block;
+  }
+}
+header nav ul.gnb .lang-select-box select {
+  border: none;
+  font-size: 17px;
+  background: transparent;
+  height: 22px;
+  vertical-align: middle;
+}
+header nav ul.gnb .lang-select-box select [selected] {
+  color: #5c46ff;
+}
+header nav ul.gnb .lang-select-box select option:hover {
+  background-color: #eee !important;
+}
 header nav a.close {
   display: none;
   position: absolute;

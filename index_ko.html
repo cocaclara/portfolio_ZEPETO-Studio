@@ -52,8 +52,21 @@
 								</ul>
 							</li>
 							<li><a href="#">지원</a></li>
+							
+							<!-- 다국어 지원 -->
+							<li class="lang-select-box">
+								<select name="select-value" id="lang" onchange="location.href=this.value">
+									<option value="index_en.html">English</option>
+									<option value=".html" selected>한국어</option>
+									<option value="index_jp.html">日本語</option>
+									<option value="index_cn.html">中文</option>
+									<option value="index_it.html">italiano</option>
+									<option value="index_es.html">español</option>
+								</select>
+							</li>
 						</ul>
 						<a href="#" class="close"><i class="fa-solid fa-x"></i></a>
+						
 					</nav>
 					<ul class="hd-top">
 						<li class="contents"><a href="#">콘텐츠 관리</a></li>
@@ -309,6 +322,7 @@
 					<li><a href="#" class="icon-youtube"><i class="fa-brands fa-youtube"></i></a></li>
 					<li><a href="#" class="icon-tiktok"><i class="fa-brands fa-tiktok"></i></a></li>
 				</ul>
+				<!-- 다국어 지원 -->
 				<div class="lang-select-box">
 					<select name="select-value" id="lang" onchange="location.href=this.value">
 						<option value="index_en.html">English</option>

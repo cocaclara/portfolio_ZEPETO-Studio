@@ -240,6 +240,31 @@ header{
           background-position: center;
         }
       }
+
+      
+      .lang-select-box{
+        display: none;
+        margin-top: 20px;
+  
+        @include header-change{
+          display: block;
+        }
+  
+        select{
+          border: none;
+          font-size: 17px;
+          background: transparent;
+          height: 22px;
+          vertical-align: middle;
+    
+          [selected]{
+            color: $point-color;
+          }
+          option:hover{
+            background-color: #eee !important;
+          }
+        }
+      }
     }
 
     a.close{
@@ -253,6 +278,9 @@ header{
         display: block;
       }
     }
+
+    
+    
   }
 
   ul.hd-top{
