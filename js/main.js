@@ -6,60 +6,82 @@ $(document).ready(function () {
     document.location.reload();
   });
 
+
+  // 윈도우창 변수 선언
   var wd = $(window).innerWidth();
 
-  // 윈도우 width가 1190px이상일 때
-  function header_change(){
-    if (wd >= 1200) {   //1200px 이상일 때
-      // .gnb > li 마우스오버(아웃) 시, a 컬러 변경(유지)
-      $('.gnb > li').mouseover(function(){
-        $(this).children('a').addClass('hover');
-      });
-      $('.gnb > li').mouseout(function(){
-        $(this).children('a').removeClass('hover');
-            
-        if( $(this).has('ul') && $('.lnb').is(':visible') ){
-          $(this).children('a').addClass('hover');
-        }else{
-          // $(this).css('color','#bababa');
-          $(this).children('a').removeClass('hover');
-        }
-      });
-      // .lnb 마우스 오버(아웃) 시, .gnb li a 컬러 변경(유지)
-      $('.lnb').mouseover(function(){
-        $(this).siblings('a').addClass('hover');
-      });
-      $('.lnb').mouseout(function(){
-        $(this).siblings('a').removeClass('hover');
-      });
 
+  // 윈도우 width가 1190px이상일 때, 헤더 변경
+  if (wd >= 1200) {   //1200px 이상일 때
+    // .gnb > li 마우스오버(아웃) 시, a 컬러 변경(유지)
+    $('.gnb > li').mouseover(function(){
+      $(this).children('a').addClass('hover');
+    });
+    $('.gnb > li').mouseout(function(){
+      var $this_lnb = $(this).find('.lnb');
 
-    }else{  // 1199px 미만일 때, 헤더
-      $('.gnb > li > a').css('color','$header-black');
-      // .gnb > li 마우스오버(아웃) 시)
-      $('.gnb > li').mouseover(function(){
+      $(this).children('a').removeClass('hover');
+          
+      if( $(this).has('ul') && $('.lnb').is(':visible') ){
+        $this_lnb.siblings('a').addClass('hover');
+      }else{
+        $this_lnb.siblings('a').removeClass('hover');
+      }
+    });
+    // .lnb 마우스 오버(아웃) 시, .gnb li a 컬러 변경(유지)
+    $('.lnb').mouseover(function(){
+      $(this).siblings('a').addClass('hover');
+    });
+    $('.lnb').mouseout(function(){
+      $(this).siblings('a').removeClass('hover');
+    });
+
+    
+  }else{  // 1199px 미만일 때, 헤더
+    $('.gnb > li > a').css('color','#000008');
+    // .gnb > li 마우스오버(아웃) 시)
+    $('.gnb > li').mouseover(function(){
+      $(this).children('a').addClass('change-hover');
+    });
+    $('.gnb > li').mouseout(function(){
+      $(this).children('a').removeClass('change-hover');
+          
+      if( $('.lnb').is(':visible') ){
         $(this).children('a').addClass('change-hover');
-      });
-      $('.gnb > li').mouseout(function(){
+      }else{
         $(this).children('a').removeClass('change-hover');
-            
-        if( $('.lnb').is(':visible') ){
-          $(this).children('a').addClass('change-hover');
-        }else{
-          $(this).children('a').removeClass('change-hover');
-        }
-      });
-      // .lnb 마우스 오버(아웃) 시, .gnb li a 컬러 변경(유지)
-      $('.lnb').mouseover(function(){
-        $(this).siblings('a').addClass('change-hover');
-      });
-      $('.lnb').mouseout(function(){
-        $(this).siblings('a').removeClass('change-hover');
-      });
-    }
+      }
+    });
+    // .lnb 마우스 오버(아웃) 시, .gnb li a 컬러 변경(유지)
+    $('.lnb').mouseover(function(){
+      $(this).siblings('a').addClass('change-hover');
+    });
+    $('.lnb').mouseout(function(){
+      $(this).siblings('a').removeClass('change-hover');
+    });
   }
-  header_change();
 
+  // @included mobile일 때, gnb li 컬러 변경
+  if (wd < 768 ) {    // 768px 미만일 때
+    // .gnb > li 마우스오버(아웃) 시, a 컬러 변경(유지)
+    $('.gnb > li').mouseover(function(){
+      $(this).children('a').css('color','#5c46ff');
+    });
+    $('.gnb > li').mouseout(function(){
+      var $this_lnb = $(this).find('.lnb');
+
+      $(this).children('a').css('color','#000008');
+          
+      if( $(this).has('ul') && $('.lnb').is(':visible') ){
+        $this_lnb.siblings('a').css('color','#5c46ff');
+      }else{
+        $this_lnb.siblings('a').css('color','#000008');
+      }
+    });
+  }
+
+
+  // gnb li 클릭했을 때 변경
   $(document).on('click','.gnb > li',function(){
     $(this).children('ul').toggleClass('show');
     
@@ -74,14 +96,15 @@ $(document).ready(function () {
     $(this).children('a').removeClass('change-hover','hover');
   });
   
-  // .list 버튼
+  // .list 버튼 클릭했을 때 nav 보여주기
   $('.list').click(function(){
     $('nav').show();
   });
-  // .close 버튼
+  // .close 버튼 클릭했을 때 nav 사라지기
   $('.close').click(function(){
     $('nav').hide();
   });
+
 
 
   // 스크롤 조절에 따라 .fade-up에 'on'클래스 추가하기(1번만)
@@ -103,6 +126,7 @@ $(document).ready(function () {
       }
     });
   });
+
   // 초기 화면에서 페이드업 보이기
   $('.fade-up').each(function(){
     var $this = $(this),
@@ -115,5 +139,6 @@ $(document).ready(function () {
       $this.addClass('on');
     }
   });
+
 
 });
