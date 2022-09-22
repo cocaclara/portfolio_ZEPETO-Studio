@@ -12,7 +12,7 @@ $(document).ready(function () {
       var delay = 300;          //resize 종료 후 0.3s마다 새로고침하기 위한 변수
       var re_timer;             //re_timer 변수 선언;
 
-      
+
       clearTimeout(re_timer);   //실행한 함수를 취소할 때 사용
 
       //리사이즈 한 뒤 0.3초 후 새로고침 실행 함수
@@ -21,7 +21,7 @@ $(document).ready(function () {
       }, delay);                        //0.3s 후
 
       //=================
-      cachedWidth = newWidth;
+      cachedWidth = newWidth;   //새로고침 끝내기(리사이즈 없으면)
     }
   });
 

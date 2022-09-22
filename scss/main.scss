@@ -13,7 +13,7 @@ html,body{
   font-size: 17px;
   letter-spacing: 1px;
 }
-body{overscroll-behavior: contain;}   /*모바일 최상단 스크롤 시 새로고침 막기*/
+body{overscroll-behavior: contain;    /*모바일 최상단 스크롤 시 새로고침 막기*/}
 ul,li{list-style: none;}
 a{text-decoration: none;}
 h3{font: 1.3rem sans-serif;}
