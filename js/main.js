@@ -1,9 +1,28 @@
 "use strict";
 
 $(document).ready(function () {
+  var cachedWidth = $(window).width();  // 리사이즈 전 뷰포트 너비
+
   // 리사이즈 시 자동 새로고침********************
   $(window).resize(function(){
-    document.location.reload();
+    var newWidth = $(window).width();  // 리사이즈 후 뷰포트 너비
+
+     //리사이즈 전과 후의 너비값이 '다를 때' -> 마지막 사이즈 조절 시간에 따라 새로고침하기
+    if(newWidth !== cachedWidth){
+      var delay = 300;          //resize 종료 후 0.3s마다 새로고침하기 위한 변수
+      var re_timer;             //re_timer 변수 선언;
+
+      
+      clearTimeout(re_timer);   //실행한 함수를 취소할 때 사용
+
+      //리사이즈 한 뒤 0.3초 후 새로고침 실행 함수
+      re_timer = setTimeout(function(){  //일정 시간 후 함수 실행
+        document.location.reload();     //새로고침
+      }, delay);                        //0.3s 후
+
+      //=================
+      cachedWidth = newWidth;
+    }
   });
 
 
